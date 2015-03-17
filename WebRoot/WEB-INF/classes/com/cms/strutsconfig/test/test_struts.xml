@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="text" namespace="/test" extends="struts-default">
+		<action name="webtest" class="com.cms.webportal.testaction.WebTestAction" method="execute">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="query" class="com.cms.webportal.testaction.WebTestAction" method="queryTest">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="add" class="com.cms.webportal.testaction.WebTestAction" method="addTest">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="delete" class="com.cms.webportal.testaction.WebTestAction" method="deleteTest">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="update" class="com.cms.webportal.testaction.WebTestAction" method="updateTest">
+			<result name="success">/index.jsp</result>
+		</action>
+	</package>
+</struts>    

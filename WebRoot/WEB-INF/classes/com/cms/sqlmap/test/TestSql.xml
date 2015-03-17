@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap   PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"               
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">  
+	<sqlMap namespace="Test">
+		<sql id="Select_Clause">
+	        SELECT
+				A.TESTID,
+				A.TESTVALUE,
+				A.TESTDATA
+			FROM TESTTABLE A;
+	    </sql>
+		 <sql id="Where_Clause">
+	        <isNotEmpty prepend="and" property="provinceCode">
+	            A.TESTID = #testid#
+	        </isNotEmpty>
+	        <isNotEmpty prepend="and" property="provinceCode">
+	            A.TESTVALUE = #testvalue#
+	        </isNotEmpty>
+	        <isNotEmpty prepend="and" property="provinceCode">
+	            A.TESTDATA = #testdata#
+	        </isNotEmpty>
+	    </sql>
+	    
+	    <select id="getTest" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+	    	<include refid="Select_Clause" />
+	    	<include refid="Where_Clause" />
+		</select>
+		<insert id="addTest" parameterClass="java.util.HashMap">
+ 			INSERT
+			INTO TESTTABLE 
+			VALUES(#testid#,#testvalue#,SYSDATE());
+ 		</insert>
+ 		 <update id="updateTest" parameterClass="java.util.HashMap">
+ 		 	UPDATE TESTTABLE
+			SET 
+			TESTVALUE = #testvalue#,
+			TESTDATA = SYSDATE()
+			WHERE TESTID = #testid#;
+ 		 </update>
+ 		 <delete id="deleteTest" parameterClass="java.util.HashMap">
+ 		 	DELETE
+			FROM TESTTABLE
+			WHERE TESTID = #testid#;
+ 		 </delete>
+	</sqlMap>

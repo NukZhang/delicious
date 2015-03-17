@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap   PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"               
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">  
+	<sqlMap namespace="Sequence">
+		<sql id="Select_Sequence">
+	        SELECT
+	        	A.TABLENAME AS "tablename",
+	        	A.SEQUENCENAME AS "squencename",
+				A.SEQUENCEVALUE AS "sequencevalue",
+				A.CREATEDATE AS "createdate"
+			FROM mycms_sequence A
+	    </sql>
+		 <sql id="Where_Sequence">
+		 	WHERE 1=1
+	        <isNotEmpty prepend="AND" property="tablename">
+	            A.TABLENAME=#tablename#
+	        </isNotEmpty>
+	        <isNotEmpty prepend="AND" property="sequencename">
+	            A.SEQUENCENAME=#sequencename#
+	        </isNotEmpty>
+	    </sql>
+	    <select id="getSequence" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+	    	<include refid="Select_Sequence" />
+	    	<include refid="Where_Sequence" />
+		</select>
+		<insert id="addSequence" parameterClass="java.util.HashMap">
+ 			INSERT
+			INTO MYCMS_SEQUENCE 
+			VALUES(#tablename#,#sequencename#,#sequencevalue#,SYSDATE());
+ 		</insert>
+ 		 <update id="updateSequence" parameterClass="java.util.HashMap">
+ 		 	UPDATE MYCMS_SEQUENCE
+			SET 
+			SEQUENCEVALUE = #sequencevalue#
+			WHERE TABLENAME = #tablename# and SEQUENCENAME=#sequencename#;
+ 		 </update>
+	</sqlMap>
