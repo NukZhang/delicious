@@ -8,6 +8,17 @@
 <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 <!--slider-->
 <link rel="stylesheet" href="./css/flexslider.css" type="text/css" media="all" />
+<script language="JavaScript" type="text/javascript" src="./js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" src="./js/jquery.cookie.js"></script>
+<script language="JavaScript" type="text/javascript">
+$(document).ready(function(){
+	var username = $.cookie("username");
+	if(username!=null && username!=""){
+		$(".header_top_right").html(username);
+		$(".follow_icon").hide();
+	}
+});
+</script>
 </head>
 <body>
 <div class="wrap"> 

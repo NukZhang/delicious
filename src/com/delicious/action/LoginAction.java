@@ -1,6 +1,7 @@
 package com.delicious.action;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
@@ -17,12 +18,21 @@ public class LoginAction  extends ActionSupport{
 		@Override
 	    public String execute() throws Exception
 	    {
+			HttpServletRequest request = ServletActionContext.getRequest();
+			Cookie[] cookies = request.getCookies();
+			for(Cookie cookie:cookies){
+				if(cookie.getName().equals("username")){
+					return "islogin";
+				}
+			}
 			HttpServletResponse response = ServletActionContext.getResponse();
-			Cookie cookie = new Cookie("username", username + ","  
-	                + password);  
+			Cookie cookie = new Cookie("username", username);
+			Cookie pwdcookie = new Cookie("password", password);
 	        System.out.println("添加cookie");  
-	        cookie.setMaxAge(60 * 30);// cookie保存两周  
+	        cookie.setMaxAge(60 * 60 * 24);// cookie保存一天
+	        pwdcookie.setMaxAge(60 * 60 * 24);
 	        response.addCookie(cookie);
+	        response.addCookie(pwdcookie);
 	 		System.out.println(username);
 	       return SUCCESS;
 	    }

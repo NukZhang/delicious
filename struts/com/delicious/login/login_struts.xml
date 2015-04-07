@@ -4,6 +4,7 @@
 	<package name="login" namespace="/" extends="struts-default">
 		<action name="login" class="com.delicious.action.LoginAction" method="execute">
 			<result name="success">/index.html</result>
+			<result name="islogin">/index.html</result>
 		</action>
 	</package>
 </struts>    
