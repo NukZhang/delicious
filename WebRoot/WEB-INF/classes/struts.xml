@@ -6,4 +6,5 @@
 	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	<constant name="struts.serve.static.browserCache" value="false"/>
     <include file="com/cms/strutsconfig/test/test_struts.xml"/>
+    <include file="com/delicious/login/login_struts.xml"/>
 </struts>    
