@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="src" path="struts"/>
 	<classpathentry kind="src" path="spring"/>
 	<classpathentry kind="src" path="ibatis"/>
 	<classpathentry kind="src" path="propertys"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/antlr-2.7.2.jar"/>
 	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/classworlds-1.1.jar"/>
@@ -49,6 +49,6 @@
 	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/struts2-json-plugin-2.2.1.jar"/>
 	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/struts2-spring-plugin-2.2.1.jar"/>
 	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/xwork-core-2.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/Workspaces/delicious/WebRoot/WEB-INF/lib/servlet-api-3.0.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
